@@ -1,5 +1,0 @@
-nycwebcraft
-===========
-
-My Portfolio Site
-
