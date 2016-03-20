@@ -36,31 +36,45 @@ jQuery(document).ready(function($) {
     it, so be sure to research and find the one
     that works for you best.
     */
-    
+    /*Adding animated scroll to internal target links*/
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
     /* getting viewport width */
     var responsive_viewport = $(window).width();
     
     /* if is below 481px */
     if (responsive_viewport < 481) {
+    //$('#menu-topmenu').hide();
     
     } /* end smallest screen */
     
     /* if is larger than 481px */
     if (responsive_viewport > 481) {
- 
+    
     } /* end larger than 481px */
     
     /* off the bat large screen actions */
     if (responsive_viewport >= 1013) {
         $('#menu-topmenu').show();
-           $('#titledrop').css("margin-top","2px");
     }
     
 	
 	// add all your scripts here
    
    $('#contentslide').css("margin-left","0");
-   $("#main").mCustomScrollbar({
+   $('#titledrop').css("margin-top","-2%");
+
+ $("#main").mCustomScrollbar({
     verticalScroll:true
 });
 	
