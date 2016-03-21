@@ -91,11 +91,6 @@ a, a:visited {
 
 	/* mobile tap color */
 	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
@@ -109,7 +104,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
 	/*
-	if you're going to use webfonts, be sure to check your weights
+	if you are going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
 	*/
 
@@ -813,6 +808,7 @@ FOOTER STYLES
 .footer {
 	clear: both;
 }
+
 
 	/*
 	if you checked out the link above:

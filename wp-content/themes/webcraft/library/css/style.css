@@ -89,6 +89,9 @@ body {
   margin: 0;
   height: 100%;
 }
+#leftbar, #rightbar img {
+	display:none;
+}
 /* ==========================================================================
    Links
    ========================================================================== */
@@ -263,7 +266,22 @@ nav ul,
 nav ol {
   list-style: none;
   list-style-image: none;
+  text-align: center;
 }
+.nav li ul.sub-menu li a { 
+  font-size: 1em;
+  margin-left: 20px;
+}
+.nav li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: 'Wizards Magic';
+  color: #000;
+  text-align: center; 
+}
+.header {
+  position: relative;
+} 
 /* ==========================================================================
    Embedded content
    ========================================================================== */
@@ -839,32 +857,10 @@ display: none;
   margin: 0 auto;
   position: relative;
 }
-
-#leftbar {
-	position:fixed;
-	left:0;
-	bottom:0;
-	width: 10%;
-	top: 115px;
-	}
-#rightbar {
-	position:fixed;
-	right:0;
-	bottom:0;
-	width: 10%;
-	top: 115px;
-	}
-#main{
-        width: 74%;
-        height: 74%;
-        position: fixed;
-	left: 13%;      
-        top: 15%;
-  	margin: auto;
-	padding-top: 65px;
-	overflow-y:auto;
-        overflow-x:hidden;
-	}
+#main {
+	width: 90%;
+        margin: 0 auto;
+}
 #main p a{
         border-bottom: 2px solid #f4cd0c;
         color: #000;
@@ -915,118 +911,6 @@ display: none;
     -moz-transition: all .9s ease-in-out;
     -o-transition: all .9s ease-in-out;
     transition: all .9s ease-in-out;
-}
-.panel{
-    overflow-y: hidden;
-    overflow-x: hidden;
-    width: 48%;
-    margin-top: -150%;
-    position: fixed;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-}
-
-.panel:target{
-    margin-top: 0;
-    float: left;
-    bottom:10%;
-    top: 230px;
-    overflow-y:auto;
-}
-.cur_item {
-float:left;
-max-width: 100%;
-z-index:9;
-}
-
-.cur_item img {
-max-width: 100%;
-height:auto;
-border-style: solid; border-width: 20px; -moz-border-image: url('../images/websites/websitegraphic.png') 20 stretch; -webkit-border-image: url('../images/websites/websitegraphic.png') 20 stretch; -o-border-image: url('../images/websites/websitegraphic.png') 20 stretch; border-image: url('../images/websites/websitegraphic.png') 20 stretch;
-}
-.cur_item h3 {
-font-family: "Crimson Text", sans-serif;
-font-weight:bold;
-display:inline;
-}
-.cur_item h3 a {
-        border-bottom: 2px solid #f4cd0c;
-        color: #000;
-        text-decoration: none;
-        transition: all 0.2s ease 0s;  
-}
-.cur_item h3 a:hover {
-        border-color: #000;
-        color: #f4cd0c;
-        text-decoration: none;
-        transition: all 0.2s ease 0s;  
-}
-.cur_item p {
-font-family: inherit;
-font-size: 1.2rem;
-display:inline;
-}
-
-#crazywheel:target ~ .wrapper #portfoliothumbs #link_crazywheel img,
-#jitter:target ~ .wrapper #portfoliothumbs #link_jitter img,
-#usccu:target ~ .wrapper #portfoliothumbs #link_usccu img,
-#goxd:target ~ .wrapper #portfoliothumbs #link_goxd img,
-#bowlmor:target ~ .wrapper #portfoliothumbs #link_bowlmor img,
-#vistaflora:target ~ .wrapper #portfoliothumbs #link_vistaflora img, 
-#comart:target ~ .wrapper #portfoliothumbs #link_comart img, 
-#blooming:target ~ .wrapper #portfoliothumbs #link_blooming img, 
-#cit:target ~ .wrapper #portfoliothumbs #link_cit img, 
-#kandco:target ~ .wrapper #portfoliothumbs #link_kandco img 
- {
-    border: 2px solid #f4cd0c;
-}
-.wrapper {
-width: 24%;
-height: 400px;
-background: #fff;
-border-top-left-radius: 30px;
-border-bottom-left-radius: 30px;
-overflow:auto;
-position: fixed;
-right: 12%;
-top: 230px;
-
-}
-
-#portfoliothumbs {
-margin-top: 0;
-width: 100%;
-border-style: solid;
-border-width: 6px 30px; 
--moz-background-image: url('../images/graphics/filmstrip.png') 6 30 round; 
--webkit-border-image: url('../images/graphics/filmstrip.png') 6 30 stretch repeat; 
--o-border-image: url('../images/graphics/filmstrip.png') 6 30 stretch repeat; 
-border-image: url('../images/graphics/filmstrip.png') 6 30 fill stretch repeat;
-padding: 0 10px 0 10px;
-}
-
-#portfoliothumbs ul {
-margin: 0;
-position: relative;
-}
-
-#portfoliothumbs ul li {
-padding: 5px 0;
-}
-
-#portfoliothumbs li:first-child {
-padding-top: 10px;
-}
-
-
-#portfoliothumbs img {
-border-radius: 12px;
-}
-.stretch {
-width: 100%;
-height: 100%;
 }
 .list li img{
 height: auto;
@@ -1139,17 +1023,9 @@ h5,
 /*********************
 06. HEADER SYTLES
 *********************/
-
-.header {
-	position:fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 100;
-}
 #inner-header {
   width: 100%;
-  background: url('../images/header_bg7.png') repeat repeat scroll;
+  background: url('../images/texture.jpg') repeat repeat scroll;
   border-bottom: 6px double #000;
   max-height: 100%;	}
 
@@ -1170,103 +1046,6 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-.nav {
-  width: 70%;  
-  margin: auto;
-  margin-top: -4px;
-  line-height: 1.5;
-
-
-  /* end .menu li */
-
-  /* highlight current page */
-
-  /* end current highlighters */
-}
-
-.nav li {width: 30%;}
-.nav li:first-child {	
-  /*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-
-}
-
-	
-.nav li a {
-  display: block;
-  padding-top: 4px;
-  background: #fff;
-  text-decoration: none;
-  font-size: 1.7em;
-  font-family: 'Wizards Magic';
-  color: #000;
-  text-align: center;  
- -webkit-border-bottom-right-radius: 50px;
-  -webkit-border-bottom-left-radius: 70px;
-  -moz-border-radius-bottomright: 50px;
-  -moz-border-radius-bottomleft: 70px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 70px;
-  box-shadow: 0 2px 0 rgb(51, 51, 51), 0 0 1px rgb(51, 51, 51);
-  /*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-}
-
-.nav li:first-child+li {
-	width: 40%; 
-	line-height: 4rem; 
-	font-size: 1.4em;
-	}
-	
-.nav li:first-child+li a { -webkit-border-bottom-right-radius: 60px;
-  -webkit-border-bottom-left-radius: 60px;
-  -moz-border-radius-bottomright: 60px;
-  -moz-border-radius-bottomleft: 60px;
-  border-bottom-right-radius: 60px;
-  border-bottom-left-radius: 60px;	
-  }
-
-.nav li ul.sub-menu { border: none;}
-
-.nav li ul.sub-menu li,
-.nav li ul.children li {
-  float: none;
-  margin: auto;
-  width: 65%;
-  border-top: 1px solid #000;
-}
-
-.nav li ul.sub-menu li:last-child {
-	width: 45%;
-}
-
-.nav li ul.sub-menu li a {
-	  font-size: 1.2rem;
-          line-height: 2rem;
-          padding: 0 20px;
-	  }
-
-.nav li.current-menu-ancestor > a {
-	background: #111111;
-	border-bottom-left-radius: 70px;
-        border-bottom-right-radius: 50px; 
-        color: #ffffff;}
-
-.nav li.current-menu-item > a {
-	background: #111111;
-	border-bottom-left-radius: 70px;
-        border-bottom-right-radius: 50px; 
-        color: #ffffff;}
-/* end .nav */
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
@@ -1772,6 +1551,118 @@ you can add resource intensive styles.
   values are commented out on each line.
   
   ******************************************************************/
+
+.header {
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}
+.nav {
+  width: 70%;  
+  margin: auto;
+  margin-top: -4px;
+  line-height: 1.5;
+
+
+  /* end .menu li */
+
+  /* highlight current page */
+
+  /* end current highlighters */
+}
+
+.nav li {width: 30%;}
+.nav li:first-child {	
+  /*
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/
+
+}
+
+	
+.nav li a {
+  display: block; 
+  background: #fff;
+  padding-top: 4px;
+  -webkit-border-bottom-right-radius: 50px;
+  -webkit-border-bottom-left-radius: 70px;
+  -moz-border-radius-bottomright: 50px;
+  -moz-border-radius-bottomleft: 70px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 70px;
+  box-shadow: 0 2px 0 rgb(51, 51, 51), 0 0 1px rgb(51, 51, 51);
+  /*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+}
+
+.nav li:first-child+li {
+	width: 40%; 
+	line-height: 4rem; 
+	font-size: 1.4em;
+	}
+	
+.nav li:first-child+li a { -webkit-border-bottom-right-radius: 60px;
+  -webkit-border-bottom-left-radius: 60px;
+  -moz-border-radius-bottomright: 60px;
+  -moz-border-radius-bottomleft: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 60px;	
+  }
+
+.nav li ul.sub-menu { border: none;}
+
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  float: none;
+  margin: auto;
+  width: 65%;
+  border-top: 1px solid #000;
+}
+
+.nav li ul.sub-menu li:last-child {
+	width: 45%;
+}
+
+.nav li ul.sub-menu li a {
+	  font-size: 1.2rem;
+          line-height: 2rem;
+          padding: 0 20px;
+	  }
+
+.nav li.current-menu-ancestor > a {
+	background: #111111;
+	border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 50px; 
+        color: #ffffff;}
+
+.nav li.current-menu-item > a {
+	background: #111111;
+	border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 50px; 
+        color: #ffffff;}
+/* end .nav */
+
+#main{
+        width: 74%;
+        height: 74%;
+        position: fixed;
+	left: 13%;      
+        top: 15%;
+  	margin: auto;
+	padding-top: 65px;
+	overflow-y:auto;
+        overflow-x:hidden;
+}
   .onecol {
     width: 5.801104972%;
   }
@@ -1889,6 +1780,7 @@ you can add resource intensive styles.
   
   }
   .nav li a {
+	font-size: 1.7em;
     /*
   			you can use hover styles here even though this size
   			has the possibility of being a mobile device.
@@ -2005,17 +1897,141 @@ you can add resource intensive styles.
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 */
-@media only screen and (min-width: 1240px) {
-  /******************************************************************
-  Site Name: 
-  Author: 
-  
-  Stylesheet: Super Large Monitor Stylesheet
-  
-  You can add some advanced styles here if you like. This kicks in
-  on larger screens.
-  
-  ******************************************************************/
+@media only screen and (min-width: 1240px) 
+{
+.stretch {
+width: 100%;
+height: 100%;
+}
+#leftbar, #rightbar img {
+  display:block;
+}
+#leftbar {
+	position:fixed;
+	left:0;
+	bottom:0;
+	width: 10%;
+	top: 115px;
+	}
+#rightbar {
+	position:fixed;
+	right:0;
+	bottom:0;
+	width: 10%;
+	top: 115px;
+	}
+
+.panel{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 48%;
+    margin-top: -150%;
+    position: fixed;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.panel:target{
+    margin-top: 0;
+    float: left;
+    bottom:10%;
+    top: 230px;
+    overflow-y:auto;
+}
+.cur_item {
+float:left;
+max-width: 100%;
+z-index:9;
+}
+
+.cur_item img {
+max-width: 100%;
+height:auto;
+border-style: solid; border-width: 20px; -moz-border-image: url('../images/websites/websitegraphic.png') 20 stretch; -webkit-border-image: url('../images/websites/websitegraphic.png') 20 stretch; -o-border-image: url('../images/websites/websitegraphic.png') 20 stretch; border-image: url('../images/websites/websitegraphic.png') 20 stretch;
+}
+.cur_item h3 {
+font-family: "Crimson Text", sans-serif;
+font-weight:bold;
+display:inline;
+}
+.cur_item h3 a {
+        border-bottom: 2px solid #f4cd0c;
+        color: #000;
+        text-decoration: none;
+        transition: all 0.2s ease 0s;  
+}
+.cur_item h3 a:hover {
+        border-color: #000;
+        color: #f4cd0c;
+        text-decoration: none;
+        transition: all 0.2s ease 0s;  
+}
+.cur_item p {
+font-family: inherit;
+font-size: 1.2rem;
+display:inline;
+}
+
+#psteval:target ~ .wrapper #portfoliothumbs #link_psteval img, #abril:target ~ .wrapper #portfoliothumbs #link_abril img, 
+#guidantmarketing:target ~ .wrapper #portfoliothumbs #link_guidantmarketing img,#guidantportal:target ~ .wrapper #portfoliothumbs #link_guidantportal img,
+#affirma:target ~ .wrapper #portfoliothumbs #link_affirma img, #crazywheel:target ~ .wrapper #portfoliothumbs #link_crazywheel img,
+#jitter:target ~ .wrapper #portfoliothumbs #link_jitter img,
+#jitter:target ~ .wrapper #portfoliothumbs #link_jitter img,
+#usccu:target ~ .wrapper #portfoliothumbs #link_usccu img,
+#goxd:target ~ .wrapper #portfoliothumbs #link_goxd img,
+#bowlmor:target ~ .wrapper #portfoliothumbs #link_bowlmor img,
+#vistaflora:target ~ .wrapper #portfoliothumbs #link_vistaflora img, 
+#comart:target ~ .wrapper #portfoliothumbs #link_comart img, 
+#blooming:target ~ .wrapper #portfoliothumbs #link_blooming img, 
+#cit:target ~ .wrapper #portfoliothumbs #link_cit img, 
+#kandco:target ~ .wrapper #portfoliothumbs #link_kandco img 
+ {
+    border: 2px solid #f4cd0c;
+}
+.wrapper {
+width: 24%;
+height: 400px;
+background: #fff;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+overflow:auto;
+position: fixed;
+right: 12%;
+top: 230px;
+
+}
+
+#portfoliothumbs {
+margin-top: 0;
+width: 100%;
+border-style: solid;
+border-width: 6px 30px; 
+-moz-background-image: url('../images/graphics/filmstrip.png') 6 30 round; 
+-webkit-border-image: url('../images/graphics/filmstrip.png') 6 30 stretch repeat; 
+-o-border-image: url('../images/graphics/filmstrip.png') 6 30 stretch repeat; 
+border-image: url('../images/graphics/filmstrip.png') 6 30 fill stretch repeat;
+padding: 0 10px 0 10px;
+}
+
+#portfoliothumbs ul {
+margin: 0;
+position: relative;
+}
+
+#portfoliothumbs ul li {
+padding: 5px 0;
+}
+
+#portfoliothumbs li:first-child {
+padding-top: 10px;
+}
+
+
+#portfoliothumbs img {
+border-radius: 12px;
+}
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

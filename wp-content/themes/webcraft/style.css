@@ -950,7 +950,7 @@ h5,
 	z-index: 1;
 }
 #inner-header {
-  background: url('../images/header_bg7.png') repeat-x scroll;
+  background: url('../images/texture.jpg') repeat-x scroll;
   border-bottom: 6px double #000;
 	}
 #inner-header img.logo{
@@ -961,105 +961,6 @@ h5,
 	 margin-bottom: 0.25em;
 	}
 
-/*********************
-07. NAVIGATION STYLES
-*********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-.nav {
-  width: 70%;  
-  margin: auto;
-  margin-top: -4px;
-
-
-  /* end .menu li */
-
-  /* highlight current page */
-
-  /* end current highlighters */
-}
-
-.nav li {width: 30%;}
-.nav li:first-child {	
-  /*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-
-}
-
-	
-.nav li a {
-  display: block;
-  background: #fff;
-  text-decoration: none;
-  font-size: 1.5em;
-   font-family: 'Ribeye';
-  color: #000;
-  text-align: center;  
- -webkit-border-bottom-right-radius: 50px;
-  -webkit-border-bottom-left-radius: 70px;
-  -moz-border-radius-bottomright: 50px;
-  -moz-border-radius-bottomleft: 70px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 70px;
-  box-shadow: 0 2px 0 rgb(51, 51, 51), 0 0 1px rgb(51, 51, 51);
-  /*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-}
-
-.nav li:first-child+li {
-	width: 40%; 
-	line-height: 4rem; 
-	font-size: 1.4em;
-	}
-	
-.nav li:first-child+li a { -webkit-border-bottom-right-radius: 60px;
-  -webkit-border-bottom-left-radius: 60px;
-  -moz-border-radius-bottomright: 60px;
-  -moz-border-radius-bottomleft: 60px;
-  border-bottom-right-radius: 60px;
-  border-bottom-left-radius: 60px;	
-  }
-
-.nav li ul.sub-menu { border: none;}
-
-.nav li ul.sub-menu li,
-.nav li ul.children li {
-  float: none;
-  margin: auto;
-  width: 65%;
-  line-height: 2rem;
-  border-top: 1px solid #000;
-}
-
-.nav li ul.sub-menu li:last-child {
-	width: 45%;	
-	}
-
-.nav li ul.sub-menu li a {
-
-	  font-size: 1.35rem;
-	  }
-
-
-.nav li.current-menu-item > a {
-	background: #111111;
-	border-bottom-left-radius: 70px;
-   border-bottom-right-radius: 50px; color: #ffffff;}
-/* end .nav */
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
@@ -1564,6 +1465,98 @@ you can add resource intensive styles.
   I liked 1140 but Boostrap's grid was way more detailed so I merged them 
   together, let's see how this works out. If you want to use 1140, the original 
   values are commented out on each line.
+/*********************
+NAVIGATION STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+.nav {
+  width: 70%;  
+  margin: auto;
+  margin-top: -4px;
+
+
+  /* end .menu li */
+
+  /* highlight current page */
+
+  /* end current highlighters */
+}
+
+.nav li {
+  width: 30%;
+}
+
+.nav li a {
+  display: block;
+  background: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+   font-family: 'Ribeye';
+  color: #000;
+  text-align: center;  
+ -webkit-border-bottom-right-radius: 50px;
+  -webkit-border-bottom-left-radius: 70px;
+  -moz-border-radius-bottomright: 50px;
+  -moz-border-radius-bottomleft: 70px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 70px;
+  box-shadow: 0 2px 0 rgb(51, 51, 51), 0 0 1px rgb(51, 51, 51);
+  /*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+}
+
+.nav li:first-child+li {
+	width: 40%; 
+	line-height: 4rem; 
+	font-size: 1.4em;
+	}
+	
+.nav li:first-child+li a { 
+  -webkit-border-bottom-right-radius: 60px;
+  -webkit-border-bottom-left-radius: 60px;
+  -moz-border-radius-bottomright: 60px;
+  -moz-border-radius-bottomleft: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 60px;	
+  }
+
+.nav li ul.sub-menu { border: none;}
+
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  float: none;
+  margin: auto;
+  width: 65%;
+  line-height: 2rem;
+  border-top: 1px solid #000;
+}
+
+.nav li ul.sub-menu li:last-child {
+	width: 45%;	
+	}
+
+.nav li ul.sub-menu li a {
+
+	  font-size: 1.35rem;
+	  }
+
+
+.nav li.current-menu-item > a {
+	background: #111111;
+	border-bottom-left-radius: 70px;
+   border-bottom-right-radius: 50px; color: #ffffff;}
+/* end .nav */
+
   
   ******************************************************************/
   .onecol {
